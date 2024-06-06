@@ -4,6 +4,7 @@ import Login from "./pages/Login.jsx";
 import Bananas from "./pages/Bananas.jsx";
 import { useSupabaseAuth } from "./integrations/supabase/auth.jsx";
 import { Button, Container } from "@chakra-ui/react";
+import ProtectedRoute from "./components/ProtectedRoute.jsx"; // Import the ProtectedRoute component
 
 function App() {
   const { session, logout } = useSupabaseAuth();
@@ -20,7 +21,11 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Index />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/bananas" element={<Bananas />} />
+        <Route path="/bananas" element={
+          <ProtectedRoute>
+            <Bananas />
+          </ProtectedRoute>
+        } />
       </Routes>
     </Router>
   );
