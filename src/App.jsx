@@ -2,6 +2,8 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Index from "./pages/Index.jsx";
 import Login from "./pages/Login.jsx";
 import Bananas from "./pages/Bananas.jsx";
+import { useSupabaseAuth } from "./integrations/supabase/auth.jsx";
+import { Button, Container } from "@chakra-ui/react";
 import ProtectedRoute from "./components/ProtectedRoute.jsx"; // Import the ProtectedRoute component
 
 function App() {
