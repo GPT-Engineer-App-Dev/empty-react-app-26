@@ -1,6 +1,7 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Index from "./pages/Index.jsx";
 import Login from "./pages/Login.jsx";
+import Bananas from "./pages/Bananas.jsx";
 import { useSupabaseAuth } from "./integrations/supabase/auth.jsx";
 import { Button, Container } from "@chakra-ui/react";
 
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Index />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/bananas" element={<Bananas />} />
       </Routes>
     </Router>
   );
